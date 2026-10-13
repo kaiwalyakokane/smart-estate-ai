@@ -18,8 +18,17 @@ st.set_page_config(
 # LOAD MODEL
 # ==========================================
 
-with open("house_model.pkl", "rb") as file:
-    saved_data = pickle.load(file)
+import joblib
+
+saved_data = joblib.load("house_model.pkl")
+
+model = saved_data["model"]
+features = saved_data["features"]
+cities = saved_data["cities"]
+property_types = saved_data["property_types"]
+locality_types = saved_data["locality_types"]
+furnishing_options = saved_data["furnishing_options"]
+metrics = saved_data["metrics"]
 
 model = saved_data["model"]
 features = saved_data["features"]
